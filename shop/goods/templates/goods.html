@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Список продуктов</title>
+    {% load static %}
+    
+    <!-- <link rel="stylesheet" 
+    type="text/css" 
+    href="{% static 'style/game_style.css' %}"> -->
+    <script src = "{% static 'product_js.js' %}"></script>
+</head>
+<body>
+    <h1>Список продуктов</h1>
+    <form action="/" method="post">
+    {% csrf_token %}
+    <p>
+        Введите наименование товара и цену:
+        <input type="text" placeholder="Сахар" name="productname"/>
+        <input type="number" placeholder="50" name="price"/> руб.
+    </p>
+    <p>
+        Количество данного товара на складе
+        <input type="number" placeholder="100" name="stock" > условных единиц
+    </p>
+    <input type="submit" value="Сохранить" />
+    <input 
+    type="button" 
+    value="Сохранение через js" 
+    onclick="savefunc()" />
+    </form>
+    <a href="{% url 'storage'%}"> Список продуктов на складе </a>
+</body>
+</html>

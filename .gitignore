@@ -1,0 +1,6 @@
+shop/shop/secretkey.py
+__pycache__/
+*.txt
+shop/db.sqlite3
+*.zip
+*.jpg

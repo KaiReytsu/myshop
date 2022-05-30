@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Список продуктов</title>
+    {% load static %}
+    {% csrf_token %}
+    <style>
+        div{
+            border-color: black;
+            border: 2px solid;
+            width: 40%;
+            padding: 8px;
+        }
+    </style>
+    <script src = "{% static 'storage_js.js' %}"></script>
+</head>
+<body>
+    <a href="{% url 'products'%}"> Добавить продукт </a>
+
+    <div id="items">
+
+    </div>
+    <p>
+        страница 
+        <span id="page"></span> 
+        из 
+        <span id="last_page">{{num_pages}}</span> 
+    </p>
+    <input 
+        type="button" 
+        style="display: none;" 
+        value="Предыдущие" 
+        name="prev" 
+        onclick="prev_page()" />
+    <input 
+        type="button" 
+        style="display: block;" 
+        value="Следующие" 
+        name="next" 
+        onclick="next_page()" />
+</body>
+</html>
